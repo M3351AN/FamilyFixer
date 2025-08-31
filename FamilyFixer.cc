@@ -174,11 +174,7 @@ int main(int argc, char* argv[]) {
   }
 
   printf("Parse parental settings.\n");
-  std::ifstream test(vdf_path);
-  if (!test) {
-    printf("localconfig.vdf 文件不存在: %s\n", vdf_path.c_str());
-    exit(1);
-  }
+
   std::string parental_settings = ParseParentalSettings(vdf_path);
 
   std::vector<uint8_t> settings_bytes = HexToBytes(parental_settings);
